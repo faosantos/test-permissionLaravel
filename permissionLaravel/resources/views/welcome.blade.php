@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   Testando as permissões
                 </div>
 
                 <div class="links">
