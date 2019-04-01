@@ -62,7 +62,7 @@ class UserController extends Controller
 
 
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+                        ->with('success','Usuario cadastrado com sucesso');
     }
 
 
@@ -130,7 +130,7 @@ class UserController extends Controller
 
 
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('success','Usuario atualizado com sucesso');
     }
 
 
@@ -144,6 +144,6 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+                        ->with('success','Usuario deletado com sucesso');
     }
 }

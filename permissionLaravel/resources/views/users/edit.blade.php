@@ -8,7 +8,7 @@
             <h2>Edit New User</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}">Voltar</a>
         </div>
     </div>
 </div>
@@ -25,8 +25,61 @@
   </div>
 @endif
 
+    <form method="post"  action="{{route('users.update', $user->id)}}" enctype="multipart/form-data">
+                        {!! method_field('put') !!}
+                        {{ csrf_field() }}
+                        <div class="col-md-6">              
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" name="name" 
+                                       class="form-control" 
+                                       value="{{$user->name}}"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="text" name="email" 
+                                       class="form-control" 
+                                       value="{{$user->email}}"
+                                       required>
+                            </div>    
+                        </div>                 
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="password">Senha</label>
+                                <input type="text" name="password" 
+                                       class="form-control" 
+                                       value="{{$user->password}}"
+                                       required>
+                            </div>    
+                        </div> 
+                        {{-- <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="confirm-password">Confirmar senha</label>
+                                <input type="checkbox" name="confirm-password" 
+                                       class="form-control" 
+                                       value="{{$user->confirm-password}}"
+                                       required>
+                            </div>     --}}
+                        </div>                         
+                        <div class="col-md-12">                   
+                            <button type="reset" class="btn btn-default">
+                                Limpar
+                            </button>
+                            <button type="submit" 
+                                    class="btn btn-warning" id="black">
+                                Alterar
+                            </button>
+                        </div>
+    </form>             
 
-{!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+
+
+
+        {{-- parte original com o Laravel collective que não tem mais suporte --}}
+{{-- {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -62,7 +115,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
-{!! Form::close() !!}
+{!! Form::close() !!} --}}
 
 
 @endsection

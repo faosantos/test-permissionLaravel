@@ -70,7 +70,7 @@ class RoleController extends Controller
 
 
         return redirect()->route('roles.index')
-                        ->with('success','Role created successfully');
+                        ->with('success','Papeis criados com sucesso');
     }
     /**
      * Display the specified resource.
@@ -133,7 +133,7 @@ class RoleController extends Controller
 
 
         return redirect()->route('roles.index')
-                        ->with('success','Role updated successfully');
+                        ->with('success','Papeis atualizados com secesso');
     }
     /**
      * Remove the specified resource from storage.
@@ -145,6 +145,6 @@ class RoleController extends Controller
     {
         DB::table("roles")->where('id',$id)->delete();
         return redirect()->route('roles.index')
-                        ->with('success','Role deleted successfully');
+                        ->with('success','Papeis deletados com secesso');
     }
 }
