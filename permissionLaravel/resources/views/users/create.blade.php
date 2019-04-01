@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Create New User</h2>
+            <h2>Criar novo Usuário</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
@@ -26,8 +26,57 @@
 @endif
 
 
+<form method="post"  action="{{route('users.store')}}" enctype="multipart/form-data">
+                        {!! method_field('put') !!}
+                        {{ csrf_field() }}
+                        <div class="col-md-6">              
+                            <div class="form-group">
+                                <label for="name">Nome:</label> 
+                                <input type="text" name="name" 
+                                       class="form-control" 
+                                       value="{{$user->name}}"
+                                       required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email"><strong> E-mail </strong></label>
+                                <input type="text" name="email" 
+                                       class="form-control" 
+                                       value="{{$user->email}}"
+                                       required>
+                            </div>    
+                        </div>                 
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="password"><strong>Senha:</strong></label>
+                                <input type="text" name="password" 
+                                       class="form-control" 
+                                       value="{{$user->password}}"
+                                       required>
+                            </div>    
+                        </div> 
+                        {{-- <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="confir-password"><strong>Confirm Password:</strong></label>
+                                <input type="checkbox" name="confir-password" 
+                                       class="form-control" 
+                                       value="{{$user->confir-password}}"
+                                       required>
+                            </div>     --}}
+                        </div>                         
+                        <div class="col-md-12">                   
+                            <button type="reset" class="btn btn-default">
+                                Limpar
+                            </button>
+                            <button type="submit" 
+                                    class="btn btn-warning" id="black">
+                                Alterar
+                            </button>
+                        </div>
+    </form>             
 
-{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
+{{-- {!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -63,7 +112,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
-{!! Form::close() !!}
+{!! Form::close() !!} --}}
 
 
 @endsection
