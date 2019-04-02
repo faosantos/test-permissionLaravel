@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,9 +112,7 @@
     </div> <!-- row / end -->
 </div> <!-- container / end -->
 
-
 </body>
-
 
 <script type="text/javascript">
     $(document).ready(function(){

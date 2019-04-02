@@ -8,7 +8,7 @@
             <h2>Criar novo Usuário</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}">Voltar</a>
         </div>
     </div>
 </div>
@@ -34,7 +34,8 @@
                                 <label for="name">Nome:</label> 
                                 <input type="text" name="name" 
                                        class="form-control" 
-                                       value="{{$user->name}}"
+                                       value="name"
+                                       placeholder="Nome"
                                        required>
                             </div>
                         </div>
@@ -43,7 +44,8 @@
                                 <label for="email"><strong> E-mail </strong></label>
                                 <input type="text" name="email" 
                                        class="form-control" 
-                                       value="{{$user->email}}"
+                                       value="email"
+                                       placeholder="Email"
                                        required>
                             </div>    
                         </div>                 
@@ -52,7 +54,8 @@
                                 <label for="password"><strong>Senha:</strong></label>
                                 <input type="text" name="password" 
                                        class="form-control" 
-                                       value="{{$user->password}}"
+                                       value="password"
+                                       placeholder="Senha"
                                        required>
                             </div>    
                         </div> 
@@ -71,7 +74,7 @@
                             </button>
                             <button type="submit" 
                                     class="btn btn-warning" id="black">
-                                Alterar
+                                submit
                             </button>
                         </div>
     </form>             

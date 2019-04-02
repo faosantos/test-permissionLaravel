@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('image-gallery', 'ImageGalleryController@index');
+// Route::post('image-gallery', 'ImageGalleryController@upload');
+// Route::delete('image-gallery/{id}', 'ImageGalleryController@destroy');
 
-Route::get('image-gallery', 'ImageGalleryController@index');
-Route::post('image-gallery', 'ImageGalleryController@upload');
-Route::delete('image-gallery/{id}', 'ImageGalleryController@destroy');
 
 
 Auth::routes();
@@ -31,4 +31,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles','RoleController');
     Route::resource('users','UserController');
     Route::resource('products','ProductController');
+
+    Route::get('image-gallery', 'ImageGalleryController@index');
+    Route::post('image-gallery', 'ImageGalleryController@upload');
+    Route::delete('image-gallery/{id}', 'ImageGalleryController@destroy');
+   
 });
