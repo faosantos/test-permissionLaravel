@@ -27,7 +27,7 @@
 
 
 {{-- {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!} --}}
-{!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
+<form method="post"  action="{{route('roles.store')}}" enctype="multipart/form-data">
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -50,7 +50,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
-{!! Form::close() !!}
+</form>
+{{-- {!! Form::close() !!} --}}
 
 
 @endsection
